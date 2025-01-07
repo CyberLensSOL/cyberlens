@@ -73,6 +73,12 @@ export default function Home() {
               <ResultCard result={scanMutation.data} />
             )}
           </div>
+
+          {/* Contract Address Section */}
+          <div className="mt-8 p-4 border border-primary/30 rounded-lg bg-background/50 backdrop-blur text-center">
+            <p className="text-sm text-muted-foreground mb-2">Contract Address (Coming Soon)</p>
+            <p className="font-mono text-primary">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+          </div>
         </div>
       </div>
     </div>

@@ -5,6 +5,7 @@ import { ResultCard } from "@/components/ResultCard";
 import { ParticleBackground } from "@/components/ParticleBackground";
 import { SocialButtons } from "@/components/SocialButtons";
 import { HowItWorks } from "@/components/HowItWorks";
+import { VideoDemo } from "@/components/VideoDemo"; // Added import
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
@@ -97,7 +98,16 @@ export default function Home() {
             )}
           </motion.div>
 
-          {/* Contract Address Section */}
+          {/* Video Demo Section */}
+          <motion.div 
+            className="w-full max-w-2xl"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+          >
+            <VideoDemo />
+          </motion.div>
+
           <motion.div 
             className="mt-8 p-4 border border-primary/30 rounded-lg bg-background/50 backdrop-blur text-center shadow-[0_0_15px_rgba(147,51,234,0.15)]"
             initial={{ opacity: 0 }}

@@ -4,8 +4,8 @@ import { buttonHover } from "@/lib/animations";
 
 const socialLinks = [
   { icon: SiX, href: "https://x.com/CyberLensAI", label: "X (Twitter)" },
-  { icon: SiGithub, href: "https://github.com/cyberlens-ai/cyberlens", label: "GitHub" },
-  { icon: SiTelegram, href: "#", label: "Telegram" }
+  { icon: SiGithub, href: "https://github.com/CyberLensSOL/cyberlens", label: "GitHub" },
+  { icon: SiTelegram, href: "https://t.me/CyberLensAI", label: "Telegram" }
 ];
 
 export function SocialButtons() {

@@ -4,7 +4,7 @@ First off, thank you for considering contributing to CyberLens! It's people like
 
 ## Code of Conduct
 
-This project and everyone participating in it is governed by our [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code.
+This project and everyone participating in it is governed by our Code of Conduct. By participating, you are expected to uphold this code.
 
 ## How Can I Contribute?
 
@@ -77,7 +77,7 @@ Enhancement suggestions are tracked as GitHub issues. When creating an enhanceme
 
 ### Issue and Pull Request Labels
 
-This section lists the labels we use to help us track and manage issues and pull requests.
+This section lists the labels we use to help us track and manage issues and pull requests:
 
 * `bug` - Issues that are bugs
 * `enhancement` - Issues that are feature requests

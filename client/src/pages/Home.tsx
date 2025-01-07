@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { Scan, Brain } from "lucide-react";
 import { motion } from "framer-motion";
+import { DownloadAssets } from "@/components/DownloadAssets";
 
 export default function Home() {
   const [url, setUrl] = useState("");
@@ -59,6 +60,7 @@ export default function Home() {
               <SocialButtons />
               <HowItWorks />
             </div>
+            <DownloadAssets />
           </motion.div>
 
           <motion.div 

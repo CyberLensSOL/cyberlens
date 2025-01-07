@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { Scanner } from "@/components/Scanner";
 import { ResultCard } from "@/components/ResultCard";
+import { ParticleBackground } from "@/components/ParticleBackground";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
@@ -31,8 +32,10 @@ export default function Home() {
   });
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <div className="container mx-auto px-4 py-8">
+    <div className="min-h-screen bg-background/80 text-foreground relative">
+      <ParticleBackground />
+
+      <div className="container mx-auto px-4 py-8 relative z-10">
         <div className="flex flex-col items-center gap-8">
           <div className="text-center space-y-4">
             <div className="flex items-center justify-center gap-3">
@@ -65,7 +68,7 @@ export default function Home() {
             </div>
 
             {scanMutation.isPending && <Scanner />}
-            
+
             {scanMutation.isSuccess && (
               <ResultCard result={scanMutation.data} />
             )}

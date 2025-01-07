@@ -5,7 +5,6 @@ import { ResultCard } from "@/components/ResultCard";
 import { ParticleBackground } from "@/components/ParticleBackground";
 import { SocialButtons } from "@/components/SocialButtons";
 import { HowItWorks } from "@/components/HowItWorks";
-import { VideoDemo } from "@/components/VideoDemo"; // Added import
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
@@ -96,16 +95,6 @@ export default function Home() {
                 <ResultCard result={scanMutation.data} />
               </motion.div>
             )}
-          </motion.div>
-
-          {/* Video Demo Section */}
-          <motion.div 
-            className="w-full max-w-2xl"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-          >
-            <VideoDemo />
           </motion.div>
 
           <motion.div 

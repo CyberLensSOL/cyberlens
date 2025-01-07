@@ -4,21 +4,10 @@ import { buttonHover } from "@/lib/animations";
 
 const twitterBannerSVG = `<svg width="1500" height="500" viewBox="0 0 1500 500" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0a0a0a;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#000000;stop-opacity:1" />
-    </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
     <filter id="neonGlow">
       <feFlood flood-color="#ffffff" result="flood"/>
       <feComposite operator="in" in="flood" in2="SourceGraphic"/>
-      <feGaussianBlur stdDeviation="4"/>
+      <feGaussianBlur stdDeviation="8"/>
       <feComponentTransfer>
         <feFuncA type="linear" slope="3" intercept="0"/>
       </feComponentTransfer>
@@ -27,38 +16,10 @@ const twitterBannerSVG = `<svg width="1500" height="500" viewBox="0 0 1500 500" 
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
-
-  <!-- Background Effects -->
-  <g opacity="0.1">
-    <line x1="0" y1="250" x2="1500" y2="250" stroke="#ffffff" stroke-width="1"/>
-    <line x1="750" y1="0" x2="750" y2="500" stroke="#ffffff" stroke-width="1"/>
-  </g>
-
-  <!-- Title with Enhanced Glow -->
-  <g transform="translate(750,250)" filter="url(#neonGlow)">
-    <text x="0" y="0" fill="#ffffff" font-family="monospace" font-size="120" font-weight="bold" text-anchor="middle" 
-          style="letter-spacing: 10px; text-transform: uppercase;">CyberLens</text>
-    <text x="0" y="80" fill="#9333ea" font-family="monospace" font-size="40" text-anchor="middle"
-          filter="url(#glow)">Neural Pattern Analysis</text>
-  </g>
-
-  <!-- Decorative Elements -->
-  <path d="M100,250 L400,250" stroke="#9333ea" stroke-width="2" opacity="0.3"/>
-  <path d="M1100,250 L1400,250" stroke="#9333ea" stroke-width="2" opacity="0.3"/>
-</svg>`;
-
-const twitterLogoSVG = `<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0a0a0a;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#000000;stop-opacity:1" />
-    </linearGradient>
-    <filter id="logoNeonGlow">
-      <feFlood flood-color="#ffffff" result="flood"/>
-      <feComposite operator="in" in="flood" in2="SourceGraphic"/>
-      <feGaussianBlur stdDeviation="3"/>
+    <filter id="purpleGlow">
+      <feGaussianBlur stdDeviation="15" result="blur"/>
+      <feFlood flood-color="#9333ea"/>
+      <feComposite operator="in" in2="blur"/>
       <feComponentTransfer>
         <feFuncA type="linear" slope="3" intercept="0"/>
       </feComponentTransfer>
@@ -70,19 +31,51 @@ const twitterLogoSVG = `<svg width="400" height="400" viewBox="0 0 400 400" xmln
   </defs>
 
   <!-- Background -->
-  <rect width="100%" height="100%" fill="url(#logoGrad)"/>
+  <rect width="100%" height="100%" fill="#000000"/>
 
-  <!-- Main Text with Enhanced Glow -->
-  <g transform="translate(200,200)">
-    <text x="0" y="-20" fill="#ffffff" font-family="monospace" font-size="72" font-weight="bold" text-anchor="middle" 
-          filter="url(#logoNeonGlow)" style="letter-spacing: 5px;">CYBER</text>
-    <text x="0" y="60" fill="#ffffff" font-family="monospace" font-size="72" font-weight="bold" text-anchor="middle" 
-          filter="url(#logoNeonGlow)" style="letter-spacing: 5px;">LENS</text>
+  <!-- Title with Enhanced Double Glow -->
+  <g transform="translate(750,250)">
+    <text x="0" y="0" fill="#ffffff" font-family="monospace" font-size="150" font-weight="bold" text-anchor="middle" 
+          style="letter-spacing: 20px; text-transform: uppercase;" filter="url(#neonGlow)">
+      CYBERLENS
+    </text>
+    <text x="0" y="100" fill="#9333ea" font-family="monospace" font-size="50" text-anchor="middle"
+          filter="url(#purpleGlow)">
+      NEURAL PATTERN ANALYSIS
+    </text>
   </g>
+</svg>`;
 
-  <!-- Decorative Lines -->
-  <path d="M50,200 L150,200" stroke="#9333ea" stroke-width="2" opacity="0.3"/>
-  <path d="M250,200 L350,200" stroke="#9333ea" stroke-width="2" opacity="0.3"/>
+const twitterLogoSVG = `<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="intense-glow">
+      <feFlood flood-color="#ffffff" result="flood"/>
+      <feComposite operator="in" in="flood" in2="SourceGraphic"/>
+      <feGaussianBlur stdDeviation="10"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="5" intercept="0"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#000000"/>
+
+  <!-- Main Text with Maximum Glow -->
+  <g transform="translate(200,200)">
+    <text x="0" y="-20" fill="#ffffff" font-family="monospace" font-size="80" font-weight="bold" text-anchor="middle" 
+          filter="url(#intense-glow)" style="letter-spacing: 8px;">
+      CYBER
+    </text>
+    <text x="0" y="60" fill="#ffffff" font-family="monospace" font-size="80" font-weight="bold" text-anchor="middle" 
+          filter="url(#intense-glow)" style="letter-spacing: 8px;">
+      LENS
+    </text>
+  </g>
 </svg>`;
 
 function downloadSVG(svg: string, filename: string) {

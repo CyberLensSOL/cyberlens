@@ -9,31 +9,44 @@ const twitterBannerSVG = `<svg width="1500" height="500" viewBox="0 0 1500 500" 
       <stop offset="100%" style="stop-color:#000000;stop-opacity:1" />
     </linearGradient>
     <filter id="glow">
-      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
       <feMerge>
         <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="neonGlow">
+      <feFlood flood-color="#ffffff" result="flood"/>
+      <feComposite operator="in" in="flood" in2="SourceGraphic"/>
+      <feGaussianBlur stdDeviation="4"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="3" intercept="0"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
   </defs>
   <rect width="100%" height="100%" fill="url(#bgGrad)"/>
 
-  <!-- Brain Icon -->
-  <g transform="translate(600,250) scale(1.5)" filter="url(#glow)">
-    <path d="M20 12H4M20 12C20 13.1046 19.1046 14 18 14C16.8954 14 16 13.1046 16 12C16 10.8954 16.8954 10 18 10C19.1046 10 20 10.8954 20 12ZM4 12C4 13.1046 3.10457 14 2 14C0.895431 14 0 13.1046 0 12C0 10.8954 0.895431 10 2 10C3.10457 10 4 10.8954 4 12ZM12 20L12 4M12 4C13.1046 4 14 3.10457 14 2C14 0.895431 13.1046 0 12 0C10.8954 0 10 0.895431 10 2C10 3.10457 10.8954 4 12 4ZM12 20C13.1046 20 14 19.1046 14 18C14 16.8954 13.1046 16 12 16C10.8954 16 10 16.8954 10 18C10 19.1046 10.8954 20 12 20Z" 
-          fill="none" stroke="#9333ea" stroke-width="2"/>
+  <!-- Background Effects -->
+  <g opacity="0.1">
+    <line x1="0" y1="250" x2="1500" y2="250" stroke="#ffffff" stroke-width="1"/>
+    <line x1="750" y1="0" x2="750" y2="500" stroke="#ffffff" stroke-width="1"/>
   </g>
 
-  <!-- Title -->
-  <g transform="translate(750,250)" filter="url(#glow)">
-    <text x="-180" y="0" fill="#9333ea" font-family="monospace" font-size="80" font-weight="bold" text-anchor="middle">CyberLens</text>
-    <text x="-180" y="50" fill="#9333ea" font-family="monospace" font-size="30" text-anchor="middle">Neural Pattern Analysis</text>
+  <!-- Title with Enhanced Glow -->
+  <g transform="translate(750,250)" filter="url(#neonGlow)">
+    <text x="0" y="0" fill="#ffffff" font-family="monospace" font-size="120" font-weight="bold" text-anchor="middle" 
+          style="letter-spacing: 10px; text-transform: uppercase;">CyberLens</text>
+    <text x="0" y="80" fill="#9333ea" font-family="monospace" font-size="40" text-anchor="middle"
+          filter="url(#glow)">Neural Pattern Analysis</text>
   </g>
 
   <!-- Decorative Elements -->
-  <circle cx="400" cy="250" r="150" fill="none" stroke="#9333ea" stroke-width="2" opacity="0.2"/>
-  <circle cx="1100" cy="250" r="150" fill="none" stroke="#9333ea" stroke-width="2" opacity="0.2"/>
-  <path d="M0 250 L1500 250" stroke="#9333ea" stroke-width="1" opacity="0.1"/>
+  <path d="M100,250 L400,250" stroke="#9333ea" stroke-width="2" opacity="0.3"/>
+  <path d="M1100,250 L1400,250" stroke="#9333ea" stroke-width="2" opacity="0.3"/>
 </svg>`;
 
 const twitterLogoSVG = `<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
@@ -42,27 +55,34 @@ const twitterLogoSVG = `<svg width="400" height="400" viewBox="0 0 400 400" xmln
       <stop offset="0%" style="stop-color:#0a0a0a;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#000000;stop-opacity:1" />
     </linearGradient>
-    <filter id="logoGlow">
-      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+    <filter id="logoNeonGlow">
+      <feFlood flood-color="#ffffff" result="flood"/>
+      <feComposite operator="in" in="flood" in2="SourceGraphic"/>
+      <feGaussianBlur stdDeviation="3"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="3" intercept="0"/>
+      </feComponentTransfer>
       <feMerge>
-        <feMergeNode in="coloredBlur"/>
+        <feMergeNode/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
   </defs>
+
+  <!-- Background -->
   <rect width="100%" height="100%" fill="url(#logoGrad)"/>
 
-  <!-- Center Circle -->
-  <circle cx="200" cy="200" r="150" fill="none" stroke="#9333ea" stroke-width="3" filter="url(#logoGlow)"/>
-
-  <!-- Brain Icon -->
-  <g transform="translate(200,160) scale(2)" filter="url(#logoGlow)">
-    <path d="M20 12H4M20 12C20 13.1046 19.1046 14 18 14C16.8954 14 16 13.1046 16 12C16 10.8954 16.8954 10 18 10C19.1046 10 20 10.8954 20 12ZM4 12C4 13.1046 3.10457 14 2 14C0.895431 14 0 13.1046 0 12C0 10.8954 0.895431 10 2 10C3.10457 10 4 10.8954 4 12ZM12 20L12 4M12 4C13.1046 4 14 3.10457 14 2C14 0.895431 13.1046 0 12 0C10.8954 0 10 0.895431 10 2C10 3.10457 10.8954 4 12 4ZM12 20C13.1046 20 14 19.1046 14 18C14 16.8954 13.1046 16 12 16C10.8954 16 10 16.8954 10 18C10 19.1046 10.8954 20 12 20Z" 
-          fill="none" stroke="#9333ea" stroke-width="2"/>
+  <!-- Main Text with Enhanced Glow -->
+  <g transform="translate(200,200)">
+    <text x="0" y="-20" fill="#ffffff" font-family="monospace" font-size="72" font-weight="bold" text-anchor="middle" 
+          filter="url(#logoNeonGlow)" style="letter-spacing: 5px;">CYBER</text>
+    <text x="0" y="60" fill="#ffffff" font-family="monospace" font-size="72" font-weight="bold" text-anchor="middle" 
+          filter="url(#logoNeonGlow)" style="letter-spacing: 5px;">LENS</text>
   </g>
 
-  <!-- Text -->
-  <text x="200" y="250" fill="#9333ea" font-family="monospace" font-size="36" font-weight="bold" text-anchor="middle" filter="url(#logoGlow)">CyberLens</text>
+  <!-- Decorative Lines -->
+  <path d="M50,200 L150,200" stroke="#9333ea" stroke-width="2" opacity="0.3"/>
+  <path d="M250,200 L350,200" stroke="#9333ea" stroke-width="2" opacity="0.3"/>
 </svg>`;
 
 function downloadSVG(svg: string, filename: string) {

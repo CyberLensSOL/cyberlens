@@ -46,14 +46,14 @@ const twitterBannerSVG = `<svg width="1500" height="500" viewBox="0 0 1500 500" 
   </g>
 </svg>`;
 
-const twitterLogoSVG = `<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+const twitterLogoSVG = `<svg width="800" height="200" viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <filter id="intense-glow">
-      <feFlood flood-color="#ffffff" result="flood"/>
-      <feComposite operator="in" in="flood" in2="SourceGraphic"/>
-      <feGaussianBlur stdDeviation="10"/>
+    <filter id="purpleNeonGlow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feFlood flood-color="#9333ea"/>
+      <feComposite operator="in" in2="coloredBlur"/>
       <feComponentTransfer>
-        <feFuncA type="linear" slope="5" intercept="0"/>
+        <feFuncA type="linear" slope="4" intercept="0"/>
       </feComponentTransfer>
       <feMerge>
         <feMergeNode/>
@@ -65,17 +65,16 @@ const twitterLogoSVG = `<svg width="400" height="400" viewBox="0 0 400 400" xmln
   <!-- Background -->
   <rect width="100%" height="100%" fill="#000000"/>
 
-  <!-- Main Text with Maximum Glow -->
-  <g transform="translate(200,200)">
-    <text x="0" y="-20" fill="#ffffff" font-family="monospace" font-size="80" font-weight="bold" text-anchor="middle" 
-          filter="url(#intense-glow)" style="letter-spacing: 8px;">
-      CYBER
-    </text>
-    <text x="0" y="60" fill="#ffffff" font-family="monospace" font-size="80" font-weight="bold" text-anchor="middle" 
-          filter="url(#intense-glow)" style="letter-spacing: 8px;">
-      LENS
-    </text>
+  <!-- Brain Icon -->
+  <g transform="translate(250,100) scale(3)" filter="url(#purpleNeonGlow)" fill="none" stroke="#9333ea" stroke-width="1.5">
+    <path d="M9 3.6c-1.2 0-2.2.7-2.6 1.7C5.9 4.3 4.9 3.6 3.7 3.6 2 3.6.5 5 .5 6.8c0 2.3 2.2 4.2 5.4 7l.6.4.6-.4c3.2-2.8 5.4-4.7 5.4-7 0-1.7-1.5-3.2-3.2-3.2z"/>
   </g>
+
+  <!-- CyberLens Text -->
+  <text x="400" y="120" fill="#9333ea" font-family="monospace" font-size="80" font-weight="bold" text-anchor="start" 
+        filter="url(#purpleNeonGlow)" style="letter-spacing: 2px">
+    CyberLens
+  </text>
 </svg>`;
 
 function downloadSVG(svg: string, filename: string) {

@@ -1,2 +1,2 @@
-git clone https://github.com/yourusername/cyberlens.git
+git clone https://github.com/cyberlens-ai/cyberlens.git
    cd cyberlens

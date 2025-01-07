@@ -49,11 +49,11 @@ export default function Home() {
             <div className="flex items-center justify-center gap-3">
               <Brain className="w-12 h-12 text-primary animate-pulse drop-shadow-[0_0_15px_rgba(147,51,234,0.5)]" />
               <h1 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400 drop-shadow-[0_0_10px_rgba(147,51,234,0.3)]">
-                AI Content Detective
+                CyberLens
               </h1>
             </div>
             <p className="text-muted-foreground max-w-2xl">
-              Analyze websites to detect AI-generated content using advanced pattern recognition
+              Advanced AI Content Detection System | Neural Pattern Analysis
             </p>
             <div className="flex items-center justify-center gap-4">
               <SocialButtons />
@@ -69,7 +69,7 @@ export default function Home() {
           >
             <div className="flex gap-2">
               <Input
-                placeholder="Enter website URL..."
+                placeholder="Enter website URL to analyze..."
                 value={url}
                 onChange={(e) => setUrl(e.target.value)}
                 className="bg-background/50 border-primary/50 focus:border-primary shadow-[0_0_10px_rgba(147,51,234,0.2)] focus:shadow-[0_0_15px_rgba(147,51,234,0.3)] transition-shadow"

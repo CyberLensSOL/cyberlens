@@ -25,7 +25,7 @@ export function HowItWorks() {
       </DialogTrigger>
       <DialogContent className="sm:max-w-xl bg-background/95 backdrop-blur border-primary/30">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold text-center mb-4">How It Works</DialogTitle>
+          <DialogTitle className="text-2xl font-bold text-center mb-4">How CyberLens Works</DialogTitle>
         </DialogHeader>
         <div className="space-y-4">
           <img 
@@ -34,7 +34,7 @@ export function HowItWorks() {
             className="w-full rounded-lg border border-primary/30 shadow-[0_0_20px_rgba(147,51,234,0.2)]"
           />
           <div className="text-muted-foreground space-y-2">
-            <p>Our AI Content Detective analyzes websites using advanced pattern recognition to identify AI-generated content:</p>
+            <p>Our advanced Neural Pattern Analysis system scans and detects AI-generated content with high precision:</p>
             <ul className="list-disc list-inside space-y-1 ml-4">
               <li>Scans for AI generation markers and signatures</li>
               <li>Analyzes text patterns and structure</li>

@@ -3,6 +3,8 @@ import { useMutation } from "@tanstack/react-query";
 import { Scanner } from "@/components/Scanner";
 import { ResultCard } from "@/components/ResultCard";
 import { ParticleBackground } from "@/components/ParticleBackground";
+import { SocialButtons } from "@/components/SocialButtons";
+import { HowItWorks } from "@/components/HowItWorks";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
@@ -53,6 +55,10 @@ export default function Home() {
             <p className="text-muted-foreground max-w-2xl">
               Analyze websites to detect AI-generated content using advanced pattern recognition
             </p>
+            <div className="flex items-center justify-center gap-4">
+              <SocialButtons />
+              <HowItWorks />
+            </div>
           </motion.div>
 
           <motion.div 
